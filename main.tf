@@ -3,10 +3,6 @@ data "aws_route53_zone" "zone" {
   private_zone = false
 }
 
-provider "aws" {
-  region = var.region
-}
-
 resource "aws_acm_certificate" "cert" {
   domain_name       = var.host
   validation_method = "DNS"
